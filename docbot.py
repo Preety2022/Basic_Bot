@@ -45,7 +45,7 @@ exp = re.compile('[%s]' % re.escape(string.punctuation))
 
 tokenized_no_punctuation_docs = []
 
-for review in word_list:                                           # loop is for running exp command to remove punctuation marks    
+for review in word_list:                                             
   new_review=[]
   for token in review:
     new_token = exp.sub(u'',token)
@@ -94,7 +94,7 @@ def bot_response(user_input):
   similarity_scores_list= similarity_scores.flatten()
   index = index_sort(similarity_scores_list) # index will contain the list of indexes sorted of the highest values and the similarity scores and plcing at the lowest idex in the list
   index= index[1:]
-  response_flag = 0     # this var is used to find if there is response back to the user i.e., if the query matches any sentence based on the similarity_scores_list
+  response_flag = 0     # this var acknowledging if there is response back to the user i.e., if the query matches any sentence based on the similarity_scores_list
 
   j= 0
   for i in range(len(index)):
@@ -112,7 +112,7 @@ def bot_response(user_input):
 
   return bot_response
 
-# Finally we can start the chat
+#  start the conversation
 
 print('Bot: Hey there, I am here to help you, Please ask me about covid-19 infection, I will try to answer as per my knowledge.')
 
